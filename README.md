@@ -12,6 +12,8 @@
 
 `medicine_inventory_system`本来是一个智能库存管理系统，是一个单体多模块项目，但是写着写着变样了。。。本项目包括前端操作页面(基于Vue3，Element-Plus编写)和后端管理系统（基于SpringBoot，MyBatis-Plus，Redis等）还有一个python编写的库存预测服务（这个代码非常简单，预测可能不正确）
 
+后端地址：https://github.com/fish-8984/medicine_inventory_system
+
 前端地址：https://github.com/fish-8984/medicine_inventory_system_vue
 
 python预测服务地址：https://github.com/fish-8984/python_divinable
