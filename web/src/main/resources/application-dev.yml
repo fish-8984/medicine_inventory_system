@@ -1,0 +1,39 @@
+pharma:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    host: mysql
+    port: 3306
+    database: intelligent_dim_system
+    username: root
+    password: 123456
+  redis:
+    host: redis
+    port: 6379
+    password: 123456
+    database: 0
+  mail:
+    host: smtp.qq.com
+    port: 465
+    username: "xxxxxx@qq.com"
+    password: xxxxxxxxx
+    protocol: smtp
+    properties:
+      mail.smtp.ssl.enable: true
+      mail.smtp.ssl.trust: smtp.qq.com
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: false
+    disposition:
+      from: "xxxxx@qq.com"
+      to: "xxxxxx@qq.com"
+  jwt:
+    disposition:
+      userSecretKey: f70f2dd3e2e4044056dc32d47d66ca4e12b9cb8f18470aa9fe87c60212156c
+      userTtl: 86400000    # 24小时
+      userTokenName: token
+  cors:
+    allowedOrigins: ["http://127.0.0.1:8082", "http://localhost:8082"]
+    allowedMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"]
+    allowedHeaders: ["Authorization", "Content-Type", "token"]
+    exposedHeaders: ["Authorization", "token"]
+    allowCredentials: true
+    maxAge: 3600

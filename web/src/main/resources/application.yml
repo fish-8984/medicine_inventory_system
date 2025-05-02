@@ -1,0 +1,78 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: medicine_inventory_system
+  thymeleaf:
+    check-template-location: false
+  # 数据库配置
+  datasource:
+    driver-class-name: ${pharma.datasource.driver-class-name}
+    url: jdbc:mysql://${pharma.datasource.host}:${pharma.datasource.port}/${pharma.datasource.database}?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&allowPublicKeyRetrieval=true
+    username: ${pharma.datasource.username}
+    password: ${pharma.datasource.password}
+# redis配置
+  data:
+    redis:
+      host: ${pharma.redis.host}
+      port: ${pharma.redis.port}                # Redis服务器端口
+      password: ${pharma.redis.password}            # Redis密码
+      database: ${pharma.redis.database}         # 使用的数据库索引
+  cache:
+    type: redis
+  jpa:
+    open-in-view: false
+  transaction:
+    default-timeout: 30
+#  jackson配置
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+    serialization:
+      write-dates-as-timestamps: false
+# 邮件配置
+  mail:
+    host: ${pharma.mail.host}
+    port: ${pharma.mail.port}
+    username: ${pharma.mail.username}
+    password: ${pharma.mail.password}
+    protocol: ${pharma.mail.protocol}
+    properties:
+      mail.smtp.ssl.enable: ${pharma.mail.properties.mail.smtp.ssl.enable}
+      mail.smtp.ssl.trust: ${pharma.mail.properties.mail.smtp.ssl.trust}
+      mail.smtp.auth: ${pharma.mail.properties.mail.smtp.auth}
+      mail.smtp.starttls.enable: ${pharma.mail.properties.mail.smtp.starttls.enable}
+# 定时任务线程池配置
+  task:
+    scheduling:
+      pool:
+        size: 5
+      thread-name-prefix: scheduled-task-
+# mybatis-plus配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.luyu.entity
+  configuration:
+    map-underscore-to-camel-case: true
+# 端口
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+# jwt配置
+pharma:
+  jwt:
+    userSecretKey: ${pharma.jwt.disposition.userSecretKey}
+    userTtl: ${pharma.jwt.disposition.userTtl}
+    userTokenName: ${pharma.jwt.disposition.userTokenName}
+  email:
+    from: ${pharma.email.disposition.from}
+    to: ${pharma.email.disposition.to}
+  cors:
+    allowedOrigins: ${pharma.CORS.allowedOrigins}
+    allowedMethods: ${pharma.CORS.allowedMethods}
+    allowedHeaders: ${pharma.CORS.allowedHeaders}
+    exposedHeaders: ${pharma.CORS.exposedHeaders}
+    allowCredentials: ${pharma.CORS.allowCredentials}
+    maxAge: ${pharma.CORS.maxAge}
