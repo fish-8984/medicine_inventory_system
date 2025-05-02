@@ -68,7 +68,8 @@ medicine_inventory_system
 
 #### 结构图
 
-![](.\img\PixPin_2025-05-02_19-00-46.png)
+![image](https://github.com/user-attachments/assets/3a42706a-36d4-4883-a4c4-417e1592c7ff)
+
 
 
 
