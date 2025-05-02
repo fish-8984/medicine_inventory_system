@@ -16,7 +16,8 @@
 
 ### 项目图片展示
 
-![](.\img\PixPin_2025-05-02_17-04-56.png)
+![image](https://github.com/user-attachments/assets/83d775ca-a08d-4f14-a484-fc414c3989ed)
+
 
 
 
